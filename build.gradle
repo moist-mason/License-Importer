@@ -19,7 +19,7 @@ dependencies {
 gradlePlugin {
     plugins {
         licenseimporter {
-            id = 'io.github.moist-mason'
+            id = 'io.github.moist-mason.license-importer'
             displayName = 'license-importer'
             description = 'A simple Gradle plugin that allows you to import a license file (not headers) into an existing repository.'
             implementationClass = 'com.ancientmc.licenseimporter.LicenseImporterPlugin'

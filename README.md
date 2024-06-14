@@ -37,7 +37,7 @@ apply plugin: 'io.github.moist-mason.license-importer'
 Finally, add this extension:
 
 ```
-license-importer {
+licenseimporter {
   url = "https://myurl.com"
   output = file(projectDir.path + "\\LICENSE")
 }

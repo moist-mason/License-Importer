@@ -39,7 +39,7 @@ Finally, add this extension:
 ```
 license-importer {
   url = "https://myurl.com"
-  output = project.projectDir
+  output = file(projectDir.path + "\\LICENSE")
 }
 ```
 

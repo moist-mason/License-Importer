@@ -12,7 +12,7 @@ public class LicenseImporterPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-        LicenseImporterExtension extension = project.getExtensions().create("license-importer", LicenseImporterExtension.class, project);
+        LicenseImporterExtension extension = project.getExtensions().create("licenseimporter", LicenseImporterExtension.class, project);
 
         project.afterEvaluate(proj -> {
             try {

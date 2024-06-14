@@ -1,0 +1,56 @@
+plugins {
+    id 'java-library'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+group 'io.github.moist-mason'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation 'commons-io:commons-io:2.16.1'
+}
+
+publishing {
+    publications {
+        pluginMaven(MavenPublication) {
+            groupId = project.group
+            artifactId = 'license-importer'
+            version = project.version
+            pom {
+                name = 'license-importer'
+                description = 'Gradle plugin that imports license files from a URL into a directory specified by the user.'
+                url = 'https://github.com/moist-mason/license-importer'
+                licenses {
+                    license {
+                        name = 'GNU General Public License v3'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'moist-mason'
+                        name = 'Mason'
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Publishing to the Ancient MC maven for now.
+     * I couldn't find any other plugin on the Gradle plugin portal that does this, and if I can't find one I
+     * might try publishing it there, because I think it can benefit others.
+     */
+    repositories {
+        maven {
+            name = 'ancientmc-maven'
+            url = 'D:\\Programs\\Projects\\AncientMC\\ancientmc-maven\\'
+        }
+    }
+}

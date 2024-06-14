@@ -16,6 +16,17 @@ dependencies {
     implementation 'commons-io:commons-io:2.16.1'
 }
 
+gradlePlugin {
+    plugins {
+        acp {
+            id = 'io.github.moist-mason'
+            displayName = 'license-importer'
+            description = 'A simple Gradle plugin that allows you to import a license file (not headers) into an existing repository.'
+            implementationClass = 'com.ancientmc.licenseimporter.LicenseImporterPlugin'
+        }
+    }
+}
+
 publishing {
     publications {
         pluginMaven(MavenPublication) {
